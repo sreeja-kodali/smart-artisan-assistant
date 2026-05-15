@@ -1,0 +1,8 @@
+{
+  "name": "Artisan Smart Assistant",
+  "description": "A management and AI-powered assistant for artisans to track production, earnings, and get product advice.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
