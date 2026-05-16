@@ -1,15 +1,16 @@
 import axios from 'axios';
 
 const api = axios.create({
-  // backend runs on http://localhost:5000
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://smart-artisan-assistant-2.onrender.com',
 });
 
 api.interceptors.request.use((config) => {
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
   if (userInfo && userInfo.token) {
     config.headers.Authorization = `Bearer ${userInfo.token}`;
   }
+
   return config;
 });
 
