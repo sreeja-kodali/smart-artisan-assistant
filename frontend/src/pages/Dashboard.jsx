@@ -8,7 +8,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [summary, setSummary] = useState({ totalEarnings: 0, totalItemsProduced: 0, totalSales: 0 });
   const [activities, setActivities] = useState([]);
-  const [insights, setInsights] = useState({ productionGrowth: 0, mostUsedMaterial: 'Clay' });
+  const [insights, setInsights] = useState({ productionGrowth: 0, mostUsedMaterial: '' });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -74,7 +74,7 @@ export default function Dashboard() {
 
         const topMaterial = Object.keys(materialCounts).length > 0
           ? Object.entries(materialCounts).sort((a, b) => b[1] - a[1])[0][0]
-          : 'Clay';
+          : '';
 
         setInsights({
           productionGrowth: growthPercent,
@@ -186,7 +186,7 @@ export default function Dashboard() {
             <div className="bg-white/10 p-4 rounded-2xl">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium">Most Used Material</span>
-                <span className="text-2xl font-bold">{insights.mostUsedMaterial}</span>
+                <span className="text-2xl font-bold">{insights.mostUsedMaterial || 'No productions made'}</span>
               </div>
               <p className="text-xs text-white/70">in your recent productions</p>
             </div>
