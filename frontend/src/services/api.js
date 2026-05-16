@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://smart-artisan-assistant-2.onrender.com',
+  baseURL: 'https://smart-artisan-assistant-2.onrender.com/api',
 });
 
 api.interceptors.request.use((config) => {
